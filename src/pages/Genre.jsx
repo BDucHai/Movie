@@ -9,7 +9,7 @@ import { Button, CircularProgress } from "@mui/material";
 import MovieSurface from "../components/MovieSurface/MovieSurface";
 
 const Genre = () => {
-    document.title ="Thể Loại"
+    document.title = "Thể Loại";
     const { gen } = useParams();
     const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(true);
@@ -53,7 +53,7 @@ const Genre = () => {
         return () => {
             setMovies([]);
         };
-    }, [page]);
+    }, [page, gen]);
     return (
         <>
             <div
@@ -92,7 +92,7 @@ const Genre = () => {
                                     {gen}
                                 </a>
                                 mới nhất ,Tổng hợp danh sách các bộ phim hay được web cập nhật liên tục.Tải hơn 10.000
-                                bộ phim hanh dong năm 2022,2023 vietsub, thuyết minh mới nhất, hay nhất
+                                bộ phim {gen} năm 2022,2023 vietsub, thuyết minh mới nhất, hay nhất
                             </div>
                         </div>
                         {/* Show Movieeee */}
