@@ -1,0 +1,69 @@
+.banner{
+     position: relative;
+}
+
+.icon-play{  
+     position: absolute;
+     height: 50px;
+     width: 50px;
+     background-color: #ff9601bf;
+     top: 50%;
+     left: 50%;
+     translate: -50% -50%;
+     border-radius: 50%;
+     transform: scale(1.5);
+     transition: all 0.3s ease;
+     cursor:pointer;
+     opacity: 0.7;
+
+}
+.icon-play::after{
+     content: '';
+     position:absolute;
+     top: 50%;
+     left: 50%;
+     border: 15px solid transparent;
+     border-left: 20px solid #fff;
+     margin: -15px 0 0 -6px;
+}
+.icon-play:hover{
+     transform: scale(1.7);
+}
+//"movie-img absolute w-[250px] h-[150px] object-cover bottom-3 left-3
+.movie-img{
+     position: absolute;
+     object-position: top;
+     width: 250px;
+     height: 150px;
+     object-fit: cover;
+     bottom: 12px;
+     left: 12px;
+}
+
+.info{
+     position: absolute;
+     color:#fff;
+     bottom: 12px;
+     left:280px;
+}
+
+@media (max-width: 1200px){
+     .icon-play{
+          width: 35px;
+          height: 35px;
+          top: 40px;
+          left: 92%;
+     }
+     .icon-play::after{
+          border: 10px solid transparent;
+          border-left: 16px solid #fff;
+          margin: -10px 0 0 -5px;
+     }
+     .movie-img{
+          display: none;
+     }
+
+     .info{
+          left:12px;
+     }
+}

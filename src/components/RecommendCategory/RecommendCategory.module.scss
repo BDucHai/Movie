@@ -1,0 +1,24 @@
+.list-movie{
+     display: flex;
+     overflow-x: scroll;
+     scroll-behavior: smooth;
+     color: #fff;
+     padding-bottom: 50px;
+     background-image: url('https://c.wallhere.com/photos/70/ac/heartbeat_heart_ekg_minimalism_black_background-1368489.jpg!d');
+     background-repeat: repeat;
+     background-size: contain;
+}
+
+.list-movie::-webkit-scrollbar {
+     border-radius: 10px;
+     height: 10px;
+}
+.list-movie::-webkit-scrollbar-thumb {
+     border-radius: 10px;
+     background-color: #FFF;
+     background-image: -webkit-linear-gradient(top, #d5effb 0%, #a8dcf3 50%, #9fd8ef 51%, #428442 100%)
+}
+.list-movie::-webkit-scrollbar-track{
+     border-radius: 10px;
+     width: 90%;
+}
