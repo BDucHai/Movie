@@ -12,6 +12,7 @@
 ::-webkit-scrollbar {
      border-radius: 10px;
      width: 4px;
+     height: 10px;
      background-color: #F5F5F5;
 }
 
@@ -22,12 +23,8 @@
 }
 ::-webkit-scrollbar-thumb {
      border-radius: 10px;
-     background-color: #f08760f7;
-          background-image: -webkit-linear-gradient(90deg,
-                    transparent,
-                    rgba(0, 0, 0, 0.4) 50%,
-                    transparent,
-                    transparent)
+     background-color: #FFF;
+          background-image: -webkit-linear-gradient(top, #d5effb 0%, #a8dcf3 50%, #9fd8ef 51%, #428442 100%)
 }
 
 /* Handle on hover */

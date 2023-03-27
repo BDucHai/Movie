@@ -9,16 +9,3 @@
      background-size: contain;
 }
 
-.list-movie::-webkit-scrollbar {
-     border-radius: 10px;
-     height: 10px;
-}
-.list-movie::-webkit-scrollbar-thumb {
-     border-radius: 10px;
-     background-color: #FFF;
-     background-image: -webkit-linear-gradient(top, #d5effb 0%, #a8dcf3 50%, #9fd8ef 51%, #428442 100%)
-}
-.list-movie::-webkit-scrollbar-track{
-     border-radius: 10px;
-     width: 90%;
-}
