@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import useDebounce from "../hook/useDebounce";
 
 import { Clear, Loop, Search as SearchIcon } from "@mui/icons-material";
-import { Box, Button, Fade, Popper } from "@mui/material";
+import { Box, Button, Fade, Popover, Popper } from "@mui/material";
 
 const Search = () => {
     const inputRef = useRef();
@@ -101,43 +101,47 @@ const Search = () => {
                     <SearchIcon />
                 </button>
             </div>
-            <Popper open={open} anchorEl={inputRef.current} transition placement="bottom-start">
-                {({ TransitionProps }) => (
-                    <Fade {...TransitionProps} timeout={350}>
-                        <Box
-                            sx={{
-                                border: 1,
-                                p: 1,
-                                bgcolor: "#263238",
-                                marginTop: "8px",
-                                color: "#999",
-                                width: "240px",
-                            }}>
-                            {searchResult.map((movie, index) => (
-                                <Link to={`/movies/${movie.title}/${movie.imdb_id}`}>
-                                    <div className={`mb-6 cursor-pointer ${index > 3 ? "hidden" : "flex"}`}>
-                                        <img src={movie.image_url} alt="" className="max-h-[70px]" />
-                                        <div className="ml-4">
-                                            <p>{movie.title}</p>
-                                            <p>Rating: {movie.rating}</p>
-                                        </div>
-                                    </div>
-                                </Link>
-                            ))}
-                            {searchResult.length > 0 && (
-                                <Button variant="contained" sx={{ width: "100%", bgcolor: "red" }}>
-                                    Xem them...
-                                </Button>
-                            )}
-                            {searchResult.length === 0 && (
-                                <Button variant="contained" sx={{ width: "100%" }}>
-                                    Khong co ket qua...
-                                </Button>
-                            )}
-                        </Box>
-                    </Fade>
-                )}
-            </Popper>
+            <Popover
+                open={open}
+                onClose={() => setOpen(false)}
+                anchorEl={inputRef.current}
+                transition
+                anchorOrigin={{
+                    vertical: "bottom",
+                    horizontal: "left",
+                }}>
+                <Box
+                    sx={{
+                        border: 1,
+                        p: 1,
+                        bgcolor: "#263238",
+                        paddingTop: "8px",
+                        color: "#999",
+                        width: "240px",
+                    }}>
+                    {searchResult.map((movie, index) => (
+                        <Link to={`/movies/${movie.title}/${movie.imdb_id}`}>
+                            <div className={`mb-6 cursor-pointer ${index > 3 ? "hidden" : "flex"}`}>
+                                <img src={movie.image_url} alt="" className="max-h-[70px]" />
+                                <div className="ml-4">
+                                    <p>{movie.title}</p>
+                                    <p>Rating: {movie.rating}</p>
+                                </div>
+                            </div>
+                        </Link>
+                    ))}
+                    {searchResult.length > 0 && (
+                        <Button variant="contained" sx={{ width: "100%", bgcolor: "red" }}>
+                            Xem them...
+                        </Button>
+                    )}
+                    {searchResult.length === 0 && (
+                        <Button variant="contained" sx={{ width: "100%" }}>
+                            Khong co ket qua...
+                        </Button>
+                    )}
+                </Box>
+            </Popover>
         </>
     );
 };
