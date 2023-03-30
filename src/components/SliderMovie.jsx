@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import MovieSurface from "./MovieSurface/MovieSurface";
 import { KeyboardDoubleArrowLeft, KeyboardDoubleArrowRight } from "@mui/icons-material";
 
-const ListMovie = ({ name, data }) => {
+const SliderMovie = ({ name, data }) => {
     const [transform, setTransform] = useState(0);
     const widthMovie = -228 * data.length;
     // Handle back next function
@@ -97,4 +97,4 @@ const ListMovie = ({ name, data }) => {
     );
 };
 
-export default ListMovie;
+export default SliderMovie;

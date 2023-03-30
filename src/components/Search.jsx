@@ -130,9 +130,11 @@ const Search = () => {
                                 </Link>
                             ))}
                             {searchResult.length > 0 && (
-                                <Button variant="contained" sx={{ width: "100%", bgcolor: "red" }}>
-                                    Xem them...
-                                </Button>
+                                <Link to={`/search/${debouncedValue}`}>
+                                    <Button variant="contained" sx={{ width: "100%", bgcolor: "red" }}>
+                                        Xem them...
+                                    </Button>
+                                </Link>
                             )}
                             {searchResult.length === 0 && (
                                 <Button variant="contained" sx={{ width: "100%" }}>

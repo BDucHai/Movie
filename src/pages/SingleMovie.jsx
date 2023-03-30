@@ -10,7 +10,7 @@ import { ArrowForwardIos, Home, StarBorder } from "@mui/icons-material";
 import BannerMovie from "../components/BannerMovie";
 import { CircularProgress, Rating } from "@mui/material";
 import Comment from "../components/Comment";
-import ListMovie from "../components/ListMovie";
+import SliderMovie from "../components/SliderMovie";
 const SingleMovie = () => {
     const [movie, setMovie] = useState();
     const [connectionMovie, setConnectionMovie] = useState([]);
@@ -24,7 +24,7 @@ const SingleMovie = () => {
     const handleConnectMovie = async (keyword) => {
         const options1 = {
             method: "GET",
-            url:   `https://moviesminidatabase.p.rapidapi.com/movie/byKeywords/${keyword}/`,
+            url: `https://moviesminidatabase.p.rapidapi.com/movie/byKeywords/${keyword}/`,
             headers: {
                 "X-RapidAPI-Key": "d013b06efbmsh2c51d6e958c2adap128fa4jsn6ce31ed1f4a6",
                 "X-RapidAPI-Host": "moviesminidatabase.p.rapidapi.com",
@@ -189,12 +189,11 @@ const SingleMovie = () => {
                         </>
                     </ModalMovie>
                     <Comment />
-                    <ListMovie name={"Có thể bạn cũng muốn xem"} data={connectionMovie} />
+                    <SliderMovie name={"Có thể bạn cũng muốn xem"} data={connectionMovie} />
                     <Footer />
                 </>
             ) : (
-                <div
-                    className={`w-full h-[100vh] flex items-center justify-center text-[50px]`}>
+                <div className={`w-full h-[100vh] flex items-center justify-center text-[50px]`}>
                     <CircularProgress disableShrink />
                 </div>
             )}
