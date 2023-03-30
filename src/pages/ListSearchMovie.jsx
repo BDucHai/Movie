@@ -79,8 +79,7 @@ const ListSearchMovie = () => {
                                 <a href={`/titlere/${title}`} className="font-bold mr-[6px] text-[#ff8a00]">
                                     {title}
                                 </a>
-                                mới nhất ,Tổng hợp danh sách các bộ phim hay được web cập nhật liên tục.Tải hơn 10.000
-                                bộ phim {title} năm 2022,2023 vietsub, thuyết minh mới nhất, hay nhất
+                                Tìm kiếm của {title}
                             </div>
                         </div>
                         {/* Show Movieeee */}
