@@ -37,7 +37,7 @@ const SliderMovie = ({ name, data }) => {
         return () => {
             clearInterval(id);
         };
-    }, []);
+    }, [data]);
 
     return (
         <>

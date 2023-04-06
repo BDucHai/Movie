@@ -90,7 +90,7 @@ const SingleMovie = () => {
             await handleCheck(x.keywords[1].keyword);
         };
         render();
-    }, []);
+    }, [movieID]);  
 
     return (
         <>

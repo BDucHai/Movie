@@ -119,7 +119,7 @@ const Search = () => {
                                 width: "240px",
                             }}>
                             {searchResult.map((movie, index) => (
-                                <Link to={`/movies/${movie.title}/${movie.imdb_id}`}>
+                                <a href={`/movies/${movie.title}/${movie.imdb_id}`}>
                                     <div className={`mb-6 cursor-pointer ${index > 3 ? "hidden" : "flex"}`}>
                                         <img src={movie.image_url} alt="" className="max-h-[70px]" />
                                         <div className="ml-4">
@@ -127,7 +127,7 @@ const Search = () => {
                                             <p>Rating: {movie.rating}</p>
                                         </div>
                                     </div>
-                                </Link>
+                                </a>
                             ))}
                             {searchResult.length > 0 && (
                                 <Link to={`/search/${debouncedValue}`}>
